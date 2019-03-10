@@ -61,8 +61,8 @@
     <string name="hbrInputWarning">Please count and input your beat rate.</string>
     <string name="ageInputWarning">Please input your age.</string>
 
-    <string name="hbrTooHigh">Your Beat Rate is too fast. At your age, beat rate should not exceed </string>
-    <string name="hbrTooLow">Your Beat Rate is too slow. At your age, beat rate need to be over </string>
+    <string name="hbrTooHigh">Your Heart Rate is too fast. At your age, heart rate should not exceed</string>
+    <string name="hbrTooLow">Your Heart Rate is too slow. At your age, heart rate need to be over</string>
     <string name="hbrOK">Your Beat Rate is within target zone. From </string>
     <string name="to"> To </string>
 </resources>

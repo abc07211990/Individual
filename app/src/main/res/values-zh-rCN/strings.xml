@@ -49,20 +49,20 @@
 
 
     <string name="Wadvice1">你最好</string>
-    <string name="WadvP">increase your weight for </string>
-    <string name="WadvD">reduce your weight for </string>
+    <string name="WadvP">增重多</string>
+    <string name="WadvD">减重多</string>
 
-    <string name="title_heartbeat">Heart Beat Rate</string>
+    <string name="title_heartbeat">心跳率Rate</string>
     <string name="count60">60</string>
-    <string name="hb_inst">Tap above to Start Counting your number of Heart beat within One Minute</string>
-    <string name="hbTV">No. of HeartBeat (bpm):</string>
-    <string name="ageTV">Your Age:</string>
-    <string name="submit_HB">Check</string>
-    <string name="hbrInputWarning">Please count and input your beat rate.</string>
-    <string name="ageInputWarning">Please input your age.</string>
+    <string name="hb_inst">点击上方开始计算一分钟内的心跳次数</string>
+    <string name="hbTV">心跳次数（bpm）：</string>
+    <string name="ageTV">你的年龄:</string>
+    <string name="submit_HB">查看</string>
+    <string name="hbrInputWarning">请数算并输入你的心率。</string>
+    <string name="ageInputWarning">请输入您的年龄。</string>
 
-    <string name="hbrTooHigh">Your Beat Rate is too fast. At your age, beat rate should not exceed </string>
-    <string name="hbrTooLow">Your Beat Rate is too slow. At your age, beat rate need to be over </string>
-    <string name="hbrOK">Your Beat Rate is within target zone. From </string>
-    <string name="to"> To </string>
+    <string name="hbrTooHigh">你的心率太快了。 在你这个年纪，节拍率不应超过</string>
+    <string name="hbrTooLow">你的心率太慢了。 在你这个年纪，心率需要高于</string>
+    <string name="hbrOK">您的心率在目标区域内。 从</string>
+    <string name="to">到</string>
 </resources>
