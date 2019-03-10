@@ -1,0 +1,68 @@
+<resources>
+
+    <string name="NA"> - - </string>
+    <string name="app_name">Individual</string>
+    <string name="title_main">Easy Health Advise</string>
+    <string name="button_bmi">BMI</string>
+    <string name="button_hbr">Heart Rate</string>
+
+    <string name="title_bmi">BMI Calculator</string>
+    <string name="height">Height:</string>
+    <string name="weight">Weight:</string>
+    <string name="height_init">0 cm</string>
+
+    <string name="u_button">update</string>
+    <string name="bmi_height">Height</string>
+    <string name="bmi_weight">Weight</string>
+    <string name="bmi_btn">See Report</string>
+    <string name="inputWarning">Please input all required items.</string>
+
+    <string-array name="unitH">
+        <item>Centimeter</item>
+        <item>Foot, Inch</item>
+    </string-array>
+
+    <string-array name="hintH">
+        <item>150cm,X</item>
+        <item>6 Feet,7 Inches</item>
+    </string-array>
+
+    <string-array name="unitW">
+        <item>Kilogram</item>
+        <item>Pound</item>
+    </string-array>
+
+    <string-array name="hintW">
+        <item>80 Kg</item>
+        <item>200 lbs</item>
+    </string-array>
+
+    <string name="reportbmi">Your BMI value is </string>
+    <string name="w0">You look great!</string>
+    <string name="wp1">You look a bit heavy.</string>
+    <string name="wm1">You look a bit thin.</string>
+    <string name="wp2">You are overweighted.</string>
+    <string name="wm2">You are severely underweight.</string>
+    <string name="wp3">You are severely obese.</string>
+    <string name="wm3">You are very severely underweight!</string>
+    <string name="wp4">You are very severely obese</string>
+
+
+    <string name="Wadvice1">You are better to </string>
+    <string name="WadvP">increase your weight for </string>
+    <string name="WadvD">reduce your weight for </string>
+
+    <string name="title_heartbeat">Heart Beat Rate</string>
+    <string name="count60">60</string>
+    <string name="hb_inst">Tap above to Start Counting your number of Heart beat within One Minute</string>
+    <string name="hbTV">No. of HeartBeat (bpm):</string>
+    <string name="ageTV">Your Age:</string>
+    <string name="submit_HB">Check</string>
+    <string name="hbrInputWarning">Please count and input your beat rate.</string>
+    <string name="ageInputWarning">Please input your age.</string>
+
+    <string name="hbrTooHigh">Your Beat Rate is too fast. At your age, beat rate should not exceed </string>
+    <string name="hbrTooLow">Your Beat Rate is too slow. At your age, beat rate need to be over </string>
+    <string name="hbrOK">Your Beat Rate is within target zone. From </string>
+    <string name="to"> To </string>
+</resources>

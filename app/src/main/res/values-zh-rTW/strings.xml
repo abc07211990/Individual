@@ -1,0 +1,68 @@
+<resources>
+
+    <string name="NA"> - - </string>
+    <string name="app_name">Individual</string>
+    <string name="title_main">简单健康咨询</string>
+    <string name="button_bmi">BMI</string>
+    <string name="button_hbr">心率</string>
+
+    <string name="title_bmi">BMI 計算器</string>
+    <string name="height">身高:</string>
+    <string name="weight">體重:</string>
+    <string name="height_init">0 cm</string>
+
+    <string name="u_button">更新</string>
+    <string name="bmi_height">身高</string>
+    <string name="bmi_weight">體重</string>
+    <string name="bmi_btn">閱讀報告</string>
+    <string name="inputWarning">請輸入所有必需的項目。</string>
+
+    <string-array name="unitH">
+        <item>厘米</item>
+        <item>尺, 寸</item>
+    </string-array>
+
+    <string-array name="hintH">
+        <item>150厘米,X</item>
+        <item>6 尺,7 寸</item>
+    </string-array>
+
+    <string-array name="unitW">
+        <item>公斤</item>
+        <item>磅</item>
+    </string-array>
+
+    <string-array name="hintW">
+        <item>80 公斤</item>
+        <item>200 磅</item>
+    </string-array>
+
+    <string name="w0">你看起來不錯!</string>
+    <string name="wp1">你看起來有點重。</string>
+    <string name="wm1">你看起来有點瘦。</string>
+    <string name="wp2">你超重了。</string>
+    <string name="wm2">你的体重严重不足。</string>
+    <string name="wp3">你現在嚴重肥胖。</string>
+    <string name="wm3">你的體重非常嚴重不足！</string>
+    <string name="wp4">你现在非常严重肥胖。</string>
+
+
+    <string name="Wadvice1">你最好</string>
+    <string name="WadvP">increase your weight for </string>
+    <string name="WadvD">reduce your weight for </string>
+
+    <string name="title_heartbeat">Heart Beat Rate</string>
+    <string name="count60">60</string>
+    <string name="hb_inst">Tap above to Start Counting your number of Heart beat within One Minute</string>
+    <string name="hbTV">No. of HeartBeat (bpm):</string>
+    <string name="ageTV">Your Age:</string>
+    <string name="submit_HB">Check</string>
+    <string name="hbrInputWarning">Please count and input your beat rate.</string>
+    <string name="ageInputWarning">Please input your age.</string>
+
+    <string name="hbrTooHigh">Your Beat Rate is too fast. At your age, beat rate should not exceed </string>
+    <string name="hbrTooLow">Your Beat Rate is too slow. At your age, beat rate need to be over </string>
+    <string name="hbrOK">Your Beat Rate is within target zone. From </string>
+    <string name="to"> To </string>
+    <string name="reportbmi">你的BMI值是</string>
+</resources>
