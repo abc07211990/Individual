@@ -67,9 +67,9 @@ public class ReportActivity extends AppCompatActivity {
             commentW.setText(getString(R.string.wp1));
         } else if (bmi <= 35) {
             commentW.setText(getString(R.string.wp2));
-        } else if (bmi <= 35) {
-            commentW.setText(getString(R.string.wp3));
         } else if (bmi <= 40) {
+            commentW.setText(getString(R.string.wp3));
+        } else {
             commentW.setText(getString(R.string.wp4));
         }
 
