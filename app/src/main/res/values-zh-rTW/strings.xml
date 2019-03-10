@@ -52,7 +52,7 @@
     <string name="WadvD">減重多</string>
 
     <string name="title_heartbeat">心跳率</string>
-    <string name="count60">心跳率</string>
+    <string name="count60">60</string>
     <string name="hb_inst">點擊上方開始計算一分鐘內的心跳次數</string>
     <string name="hbTV">心跳次數（bpm）：</string>
     <string name="ageTV">你的年齡:</string>

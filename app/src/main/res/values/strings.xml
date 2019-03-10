@@ -63,6 +63,6 @@
 
     <string name="hbrTooHigh">Your Heart Rate is too fast. At your age, heart rate should not exceed</string>
     <string name="hbrTooLow">Your Heart Rate is too slow. At your age, heart rate need to be over</string>
-    <string name="hbrOK">Your Beat Rate is within target zone. From </string>
+    <string name="hbrOK">Your Heart Rate is within target zone. From</string>
     <string name="to"> To </string>
 </resources>
