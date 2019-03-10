@@ -5,6 +5,7 @@ import pl.pawelkleczkowski.customgauge.CustomGauge;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -26,7 +27,7 @@ public class ReportActivity extends AppCompatActivity {
         if (unitW == 1) {
             wKg = (int)(weight * 0.45359);
             wlimitUp = (int)(25 * (height * height) / 0.45359);
-            wlimitLow = (int)(20 * (height * height) / 0.45359);
+            wlimitLow = (int)(18.5 * (height * height) / 0.45359);
         } else {
             wKg = weight;
             wlimitUp = (int)(25 * (height * height));
@@ -74,17 +75,21 @@ public class ReportActivity extends AppCompatActivity {
 
         diffW = (TextView) findViewById(R.id.diff_normW);
         String advice = "";
-        if (wKg > wlimitUp) {
+        //System.out.println(Integer.toString(wlimitUp));
+        //System.out.println(Integer.toString(weight));
+        //System.out.println(Integer.toString(wlimitLow));
+
+        if (weight < wlimitLow) {
             advice = getString(R.string.Wadvice1) +
                     getString(R.string.WadvP) +
-                    Integer.toString(wKg-wlimitUp) +
-                    getResources().getStringArray(R.array.hintW)[unitW];
+                    Integer.toString((wlimitLow - weight)) +
+                    getResources().getStringArray(R.array.unitW)[unitW];
 
-        } else if (wKg < wlimitLow) {
+        } else if (weight > wlimitUp) {
             advice = getString(R.string.Wadvice1) +
                     getString(R.string.WadvD) +
-                    Integer.toString(wKg-wlimitUp) +
-                    getResources().getStringArray(R.array.hintW)[unitW];
+                    Integer.toString((weight - wlimitLow)) +
+                    getResources().getStringArray(R.array.unitW)[unitW];
         }
         diffW.setText(advice);
     }
