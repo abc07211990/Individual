@@ -48,13 +48,13 @@ public class BMI_input extends AppCompatActivity {
                 String[] hintH = getResources().getStringArray(R.array.hintH)[unitH].split(",");
                 height1.setHint(hintH[0]);
                 height2.setHint(hintH[1]);
-                /*
+
                 if (unitH == 1){
-                    height2.setFocusable(true);
+                    height2.setVisibility(View.VISIBLE) ;
                 } else {
-                    height2.setFocusable(false);
+                    height2.setVisibility(View.INVISIBLE);
                 }
-                */
+
             }
             @Override
             public void onNothingSelected(AdapterView<?> arg0) {
