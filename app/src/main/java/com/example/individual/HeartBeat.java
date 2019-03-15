@@ -8,12 +8,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import pl.pawelkleczkowski.customgauge.CustomGauge;
+
 public class HeartBeat extends AppCompatActivity {
     TextView timerDp;
     int timer_status = 0;
     CountDownTimer timerCD;
     EditText hbrV, ageV;
     TextView comment;
+    CustomGauge gaugetimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,7 @@ public class HeartBeat extends AppCompatActivity {
         hbrV = (EditText) findViewById(R.id.num_hb);
         ageV = (EditText) findViewById(R.id.num_age);
         comment = (TextView) findViewById(R.id.hbrReport);
+        gaugetimer = (CustomGauge) findViewById(R.id.gaugetimer);
     }
 
     public void checkHB(View view) {
@@ -70,9 +74,11 @@ public class HeartBeat extends AppCompatActivity {
             public void onTick(long millisecToFinish) {
                 int secToFinish = (int) (millisecToFinish / 1000);
                 timerDp.setText(Long.toString(secToFinish));
+                gaugetimer.setValue(secToFinish);
             }
             public void onFinish() {
                 timerDp.setText("00");
+                gaugetimer.setValue(0);
                 timer_status = 2;
             }
         };
@@ -95,6 +101,7 @@ public class HeartBeat extends AppCompatActivity {
         } else if (timer_status ==2) {
             //Reset Timer
             timerDp.setText(getString(R.string.count60));
+            gaugetimer.setValue(60);
             timer_status = 0;
         }
     }

@@ -19,18 +19,48 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <pl.pawelkleczkowski.customgauge.CustomGauge
+        android:id="@+id/gaugetimer"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        app:gaugeEndValue="00"
+        app:gaugePointEndColor="@color/Red"
+
+        app:gaugePointStartColor="@color/Red"
+        app:gaugeStartAngle="-90"
+        app:gaugeStartValue="60"
+        app:gaugeStrokeCap="ROUND"
+        app:gaugeStrokeColor="@color/Grey"
+        app:gaugeStrokeWidth="10dp"
+        app:gaugeSweepAngle="360"
+        app:layout_constraintBottom_toTopOf="@+id/instruction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hbTitle" />
+
     <TextView
         android:id="@+id/hbTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="onClickTimer"
         android:text="@string/count60"
         android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/instruction"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hbTitle"
@@ -41,14 +71,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="172dp"
         android:layout_marginEnd="32dp"
         android:text="@string/hb_inst"
         android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hbTimer" />
+        app:layout_constraintTop_toBottomOf="@+id/hbTitle" />
 
     <TextView
         android:id="@+id/instHB"
