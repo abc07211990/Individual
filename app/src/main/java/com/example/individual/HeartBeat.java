@@ -1,5 +1,6 @@
 package com.example.individual;
 
+import android.content.SharedPreferences;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,10 +30,18 @@ public class HeartBeat extends AppCompatActivity {
         gaugetimer = (CustomGauge) findViewById(R.id.gaugetimer);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        loadPreferences();
+    }
+
     public void checkHB(View view) {
         int age, hbr, mxhbr, uzhbr, lzhbr;
         String hbrS = hbrV.getText().toString();
         String ageS = ageV.getText().toString();
+        savePreferences(hbrS, ageS);
         if (hbrS.equals("")) {
             Toast.makeText(HeartBeat.this, R.string.hbrInputWarning,
                     Toast.LENGTH_LONG).show();
@@ -105,4 +114,15 @@ public class HeartBeat extends AppCompatActivity {
             timer_status = 0;
         }
     }
+    public void savePreferences(String hbrS, String ageS) {
+        SharedPreferences pref = getSharedPreferences("HBR", MODE_PRIVATE);
+        pref.edit().putString("hbrS", hbrS).commit();
+        pref.edit().putString("ageS", ageS).commit();
+    }
+    public void loadPreferences() {
+        SharedPreferences pref = getSharedPreferences("HBR", MODE_PRIVATE);
+        hbrV.setText(pref.getString("hbrS","0"));
+        ageV.setText(pref.getString("ageS","0"));
+    }
+
 }

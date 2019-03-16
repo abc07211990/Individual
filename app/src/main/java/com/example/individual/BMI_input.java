@@ -1,6 +1,7 @@
 package com.example.individual;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -74,6 +75,14 @@ public class BMI_input extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        loadPreferences();
+    }
+
+
     public void calcBMI(View view) {
         String wS = weight.getText().toString();
         String hS1 = height1.getText().toString();
@@ -84,6 +93,7 @@ public class BMI_input extends AppCompatActivity {
             Toast.makeText(BMI_input.this, R.string.inputWarning,
                     Toast.LENGTH_LONG).show();
         } else {
+            savePreferences(unitH, unitW, hS1, hS2, wS);
             int w = Integer.parseInt(wS);
             int h1 = Integer.parseInt(hS1);
             double hM;
@@ -103,6 +113,24 @@ public class BMI_input extends AppCompatActivity {
         }
 
 
+
+    }
+
+    public void savePreferences(int unitH, int unitW, String hS1, String hS2, String wS) {
+        SharedPreferences pref = getSharedPreferences("BMI", MODE_PRIVATE);
+        pref.edit().putInt("unitH", unitH).commit();
+        pref.edit().putInt("unitW", unitW).commit();
+        pref.edit().putString("hS1", hS1).commit();
+        pref.edit().putString("hS2", hS2).commit();
+        pref.edit().putString("wS", wS).commit();
+    }
+    public void loadPreferences() {
+        SharedPreferences pref = getSharedPreferences("BMI", MODE_PRIVATE);
+        spinnerUnitH.setSelection(pref.getInt("unitH", 0));
+        spinnerUnitW.setSelection(pref.getInt("unitW", 0));
+        weight.setText(pref.getString("wS", ""));
+        height1.setText(pref.getString("hS1", ""));
+        height2.setText(pref.getString("hS2", ""));
 
     }
 }
