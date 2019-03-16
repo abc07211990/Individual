@@ -52,7 +52,7 @@ public class HeartBeat extends AppCompatActivity {
                 comment.setText(com);
             }else if (hbr > uzhbr) {
                 // too fast
-                String com = getString(R.string.hbrTooLow) +
+                String com = getString(R.string.hbrTooHigh) +
                         " " + Integer.toString(uzhbr);
                 comment.setText(com);
             } else {
