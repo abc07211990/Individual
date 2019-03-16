@@ -80,15 +80,15 @@ public class ReportActivity extends AppCompatActivity {
         //System.out.println(Integer.toString(wlimitLow));
 
         if (weight < wlimitLow) {
-            advice = getString(R.string.Wadvice1) +
-                    getString(R.string.WadvP) +
-                    Integer.toString((wlimitLow - weight)) +
+            advice = getString(R.string.Wadvice1) + " " +
+                    getString(R.string.WadvP) + " " +
+                    Integer.toString((wlimitLow - weight)) + " " +
                     getResources().getStringArray(R.array.unitW)[unitW];
 
         } else if (weight > wlimitUp) {
-            advice = getString(R.string.Wadvice1) +
-                    getString(R.string.WadvD) +
-                    Integer.toString((weight - wlimitLow)) +
+            advice = getString(R.string.Wadvice1) + " " +
+                    getString(R.string.WadvD) + " " +
+                    Integer.toString((weight - wlimitLow)) + " " +
                     getResources().getStringArray(R.array.unitW)[unitW];
         }
         diffW.setText(advice);
