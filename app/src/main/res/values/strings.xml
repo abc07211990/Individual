@@ -72,4 +72,9 @@
     <string name="hbrOK">Your Heart Rate is within target zone. From</string>
     <string name="to"> To </string>
     <string name="button_exit">Exit</string>
+    <string name="button_about">About</string>
+    <string name="about_bmi">About BMI</string>
+    <string name="about_bmi_msg">BMI = [Mass(kg)]/[Height(m)]^2</string>
+    <string name="about_hbr">About Heartbeat Rate</string>
+    <string name="about_hbr_msg">Maximum heartbeat rate = 208-0.7xAge\nHealthy rate:50%~85%</string>
 </resources>

@@ -12,7 +12,7 @@
         android:title="@string/button_hbr">
     </item>
 
-    <item android:id="@+id/exit"
-        android:title="@string/button_exit">
+    <item android:id="@+id/about"
+        android:title="@string/button_about">
     </item>
 </menu>

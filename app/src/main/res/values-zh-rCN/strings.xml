@@ -69,4 +69,9 @@
     <string name="close">Close</string>
     <string name="button_home">首页</string>
     <string name="button_exit">离开</string>
+    <string name="button_about">关于</string>
+    <string name="about_bmi">关于 BMI</string>
+    <string name="about_bmi_msg">BMI = [体重（kg）] / [高度（m）]^ 2</string>
+    <string name="about_hbr">关于心率</string>
+    <string name="about_hbr_msg">最大心率 = 208-0.7x年龄\n目标心率:50%~85%</string>
 </resources>

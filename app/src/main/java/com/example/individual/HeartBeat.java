@@ -1,5 +1,6 @@
 package com.example.individual;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.CountDownTimer;
@@ -7,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -69,7 +71,7 @@ public class HeartBeat extends AppCompatActivity implements NavigationView.OnNav
         } else {
             hbr = Integer.parseInt(hbrS);
             age = Integer.parseInt(ageS);
-            mxhbr = 200-age;
+            mxhbr = 208-(int)(age*0.7);
             uzhbr = (int) (mxhbr *0.85);
             lzhbr = (int) (mxhbr *0.5);
             if (hbr < lzhbr){
@@ -172,10 +174,20 @@ public class HeartBeat extends AppCompatActivity implements NavigationView.OnNav
             startActivity(intent);
             return true;
         }
-        if (id == R.id.exit)
+        if (id == R.id.about)
         {
-            finish();
-
+            AlertDialog.Builder builder =
+                    new AlertDialog.Builder(this);
+            builder.setTitle(R.string.about_hbr);
+            builder.setMessage(R.string.about_hbr_msg);
+            builder.setPositiveButton("OK",
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        { }
+                    });
+            builder.create();
+            builder.show();
         }
         return false;
     }

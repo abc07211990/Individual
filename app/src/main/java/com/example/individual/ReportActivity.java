@@ -2,11 +2,13 @@ package com.example.individual;
 //package pl.pawelkleczkowski.customgaugeexample;
 import pl.pawelkleczkowski.customgauge.CustomGauge;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -142,9 +144,20 @@ public class ReportActivity extends AppCompatActivity implements NavigationView.
             startActivity(intent);
             return true;
         }
-        if (id == R.id.exit)
+        if (id == R.id.about)
         {
-            finish();
+            AlertDialog.Builder builder =
+                    new AlertDialog.Builder(this);
+            builder.setTitle(R.string.about_bmi);
+            builder.setMessage(R.string.about_bmi_msg);
+            builder.setPositiveButton("OK",
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        { }
+                    });
+            builder.create();
+            builder.show();
 
         }
         return false;
