@@ -1,9 +1,15 @@
 package com.example.individual;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.CountDownTimer;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -11,13 +17,16 @@ import android.widget.Toast;
 
 import pl.pawelkleczkowski.customgauge.CustomGauge;
 
-public class HeartBeat extends AppCompatActivity {
+public class HeartBeat extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     TextView timerDp;
     int timer_status = 0;
     CountDownTimer timerCD;
     EditText hbrV, ageV;
     TextView comment;
     CustomGauge gaugetimer;
+
+    DrawerLayout drawerL;
+    ActionBarDrawerToggle dToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +37,15 @@ public class HeartBeat extends AppCompatActivity {
         ageV = (EditText) findViewById(R.id.num_age);
         comment = (TextView) findViewById(R.id.hbrReport);
         gaugetimer = (CustomGauge) findViewById(R.id.gaugetimer);
+
+        drawerL = (DrawerLayout) findViewById(R.id.drawer);
+        dToggle = new ActionBarDrawerToggle(this,drawerL,R.string.open,R.string.close);
+        drawerL.addDrawerListener(dToggle);
+        dToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        NavigationView navigationView = (NavigationView)findViewById(R.id.navigationview);
+        navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     @Override
@@ -123,6 +141,43 @@ public class HeartBeat extends AppCompatActivity {
         SharedPreferences pref = getSharedPreferences("HBR", MODE_PRIVATE);
         hbrV.setText(pref.getString("hbrS","0"));
         ageV.setText(pref.getString("ageS","0"));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (dToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        int id = menuItem.getItemId();
+        if (id == R.id.home)
+        {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.bmi)
+        {
+            Intent intent = new Intent(this, BMI_input.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.hbr)
+        {
+            Intent intent = new Intent(this, HeartBeat.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.exit)
+        {
+            finish();
+
+        }
+        return false;
     }
 
 }

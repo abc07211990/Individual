@@ -65,4 +65,8 @@
     <string name="hbrOK">您的心率在目標區域內。 從</string>
     <string name="to">到</string>
     <string name="reportbmi">你的BMI值是</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="button_home">首頁</string>
+    <string name="button_exit">離開</string>
 </resources>

@@ -65,4 +65,8 @@
     <string name="hbrTooLow">你的心率太慢了。 在你这个年纪，心率需要高于</string>
     <string name="hbrOK">您的心率在目标区域内。 从</string>
     <string name="to">到</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="button_home">首页</string>
+    <string name="button_exit">离开</string>
 </resources>

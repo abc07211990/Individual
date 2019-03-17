@@ -3,8 +3,14 @@
     <string name="NA"> - - </string>
     <string name="app_name">Individual</string>
     <string name="title_main">Easy Health Advise</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string name="button_home">Home</string>
     <string name="button_bmi">BMI</string>
     <string name="button_hbr">Heart Rate</string>
+
 
     <string name="title_bmi">BMI Calculator</string>
     <string name="height">Height:</string>
@@ -65,4 +71,5 @@
     <string name="hbrTooLow">Your Heart Rate is too slow. At your age, heart rate need to be over</string>
     <string name="hbrOK">Your Heart Rate is within target zone. From</string>
     <string name="to"> To </string>
+    <string name="button_exit">Exit</string>
 </resources>

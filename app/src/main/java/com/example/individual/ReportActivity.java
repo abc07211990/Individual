@@ -2,21 +2,40 @@ package com.example.individual;
 //package pl.pawelkleczkowski.customgaugeexample;
 import pl.pawelkleczkowski.customgauge.CustomGauge;
 
+import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
-public class ReportActivity extends AppCompatActivity {
+public class ReportActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     CustomGauge gauge;
     TextView gaugeValue;
     TextView commentW, diffW;
+
+    DrawerLayout drawerL;
+    ActionBarDrawerToggle dToggle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
+
+        drawerL = (DrawerLayout) findViewById(R.id.drawer);
+        dToggle = new ActionBarDrawerToggle(this,drawerL,R.string.open,R.string.close);
+        drawerL.addDrawerListener(dToggle);
+        dToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        NavigationView navigationView = (NavigationView)findViewById(R.id.navigationview);
+        navigationView.setNavigationItemSelectedListener(this);
+
 
         Bundle bundle = getIntent().getExtras();
         double height = bundle.getDouble("height");
@@ -92,5 +111,42 @@ public class ReportActivity extends AppCompatActivity {
                     getResources().getStringArray(R.array.unitW)[unitW];
         }
         diffW.setText(advice);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (dToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        int id = menuItem.getItemId();
+        if (id == R.id.home)
+        {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.bmi)
+        {
+            Intent intent = new Intent(this, BMI_input.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.hbr)
+        {
+            Intent intent = new Intent(this, HeartBeat.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.exit)
+        {
+            finish();
+
+        }
+        return false;
     }
 }

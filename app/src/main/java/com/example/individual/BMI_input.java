@@ -2,8 +2,13 @@ package com.example.individual;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,18 +18,27 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class BMI_input extends AppCompatActivity {
+public class BMI_input extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     Button submitButton;
     EditText height1, height2, weight;
     Spinner spinnerUnitH, spinnerUnitW;
     String[] unitH_Array, unitW_Array;
     int unitH, unitW;
-
+    DrawerLayout drawerL;
+    ActionBarDrawerToggle dToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi_input);
+
+        drawerL = (DrawerLayout) findViewById(R.id.drawer);
+        dToggle = new ActionBarDrawerToggle(this,drawerL,R.string.open,R.string.close);
+        drawerL.addDrawerListener(dToggle);
+        dToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        NavigationView navigationView = (NavigationView)findViewById(R.id.navigationview);
+        navigationView.setNavigationItemSelectedListener(this);
 
         height1 = (EditText) findViewById(R.id.height1);
         height2 = (EditText) findViewById(R.id.height2);
@@ -82,6 +96,13 @@ public class BMI_input extends AppCompatActivity {
         loadPreferences();
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (dToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     public void calcBMI(View view) {
         String wS = weight.getText().toString();
@@ -132,5 +153,34 @@ public class BMI_input extends AppCompatActivity {
         height1.setText(pref.getString("hS1", ""));
         height2.setText(pref.getString("hS2", ""));
 
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        int id = menuItem.getItemId();
+        if (id == R.id.home)
+        {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.bmi)
+        {
+            Intent intent = new Intent(this, BMI_input.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.hbr)
+        {
+            Intent intent = new Intent(this, HeartBeat.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.exit)
+        {
+            finish();
+
+        }
+        return false;
     }
 }
