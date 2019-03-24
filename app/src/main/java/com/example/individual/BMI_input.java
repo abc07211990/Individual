@@ -153,7 +153,6 @@ public class BMI_input extends AppCompatActivity implements NavigationView.OnNav
         weight.setText(pref.getString("wS", ""));
         height1.setText(pref.getString("hS1", ""));
         height2.setText(pref.getString("hS2", ""));
-
     }
 
     @Override
