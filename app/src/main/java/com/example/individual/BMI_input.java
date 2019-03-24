@@ -136,7 +136,6 @@ public class BMI_input extends AppCompatActivity implements NavigationView.OnNav
         }
 
 
-
     }
 
     public void savePreferences(int unitH, int unitW, String hS1, String hS2, String wS) {
